@@ -22,7 +22,6 @@ class Locomotive.Views.Shared.Fields.HasManyView extends Backbone.View
     _.bindAll(@, 'refresh_position_entries')
 
     @collection = @model.get(@options.name)
-
     @build_target_entry_view()
 
   render: ->
@@ -47,8 +46,11 @@ class Locomotive.Views.Shared.Fields.HasManyView extends Backbone.View
     unless @collection.get(entry.get('_id'))?
       @collection.add(entry)
 
+    console.debug("insert_entry", entry)
+    @edit_url = "#{Locomotive.mounted_on}/content_types/#{entry.get('content_type_slug')}/entries/#{entry.id}/edit"
+
     @$('.empty').hide()
-    entry_html = $(@entry_template()(label: entry.get('_label')))
+    entry_html = $(@entry_template()(label: entry.get('_label'), edit_url: @edit_url))
     entry_html.data('data-entry-id', entry.id)
     @$('> ul').append(entry_html)
 

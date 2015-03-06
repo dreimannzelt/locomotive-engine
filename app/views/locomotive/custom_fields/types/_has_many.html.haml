@@ -28,7 +28,7 @@
           %i.icon-reorder
 
         .label.col
-          {{label}}
+          = link_to "{{label}}", '{{edit_url}}'
 
         %span.actions
           = link_to_icon :pencil, '#', class: 'edit'

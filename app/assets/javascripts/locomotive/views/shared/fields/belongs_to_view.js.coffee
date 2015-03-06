@@ -5,6 +5,7 @@ class Locomotive.Views.Shared.Fields.BelongsToView extends Locomotive.Views.Shar
 
   render: ->
     @enable_select2()
+    @add_edit_link($(@el).val())
 
     return @
 
@@ -14,5 +15,20 @@ class Locomotive.Views.Shared.Fields.BelongsToView extends Locomotive.Views.Shar
 
     super($(@el), options)
 
-    $(@el).on 'select2-selecting', (el) =>
-      @model.set "#{@options.name}_id", el.val
+    $(@el)
+      .on 'select2-selecting', (el) =>
+        @model.set "#{@options.name}_id", el.val
+
+      .on 'select2-selecting', (el) =>
+        @add_edit_link(el.val)
+
+      .on 'select2-removed', (el) =>
+        @remove_edit_link()
+
+  add_edit_link: (id) -> 
+    if link_template = $(@el).data("edit-link-template")
+      link = link_template.replace("$ID", id)
+      $(@el).parent().append(link)
+      
+  remove_edit_link: ->
+    $(@el).next("a").remove()
