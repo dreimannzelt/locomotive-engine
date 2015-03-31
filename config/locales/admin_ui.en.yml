@@ -297,6 +297,7 @@ en:
     content_entries:
       index:
         title: 'Listing "%{type}"'
+        preview: preview entry
         edit: edit model
         destroy: remove model
         download: download entries

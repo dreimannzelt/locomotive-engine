@@ -90,6 +90,18 @@ module Locomotive
       next_or_previous :lt
     end
 
+    # Return fullpath based on a page template and its slug
+    # 
+    # @ return [ String ] The fullpath to the entry
+    # 
+    def fullpath
+      page_template = Locomotive::Page.where(target_klass_name: self.class.to_s).first
+
+      page_template ? 
+        File.join("/", page_template.fullpath.gsub('content_type_template', self._slug)) : 
+        nil
+    end
+
     # Find a content entry by its permalink
     #
     # @param [ String ] The permalink
