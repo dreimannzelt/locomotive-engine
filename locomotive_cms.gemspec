@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'haml',                            '~> 4.0.2'
   s.add_dependency 'simple_form',                     '~> 3.1.0'
-  s.add_dependency 'kaminari',                        '0.16.1' # https://github.com/amatsuda/kaminari/issues/642
+  s.add_dependency 'kaminari',                        '1.2.1' # https://github.com/amatsuda/kaminari/issues/642
   s.add_dependency 'bootstrap-kaminari-views',        '~> 0.0.5'
   s.add_dependency 'responders',                      '~> 2.0.2'
   s.add_dependency 'cells',                           '~> 3.11.3'
