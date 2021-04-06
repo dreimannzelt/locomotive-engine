@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'mime-types',                      '~> 2.4.3'
   # s.add_dependency 'custom_fields',                   '~> 2.4.0.rc1'
 
-  s.add_dependency 'haml',                            '~> 4.0.2'
+  s.add_dependency 'haml',                            '>= 4.0.2', '< 5.3.0'
   s.add_dependency 'simple_form',                     '~> 3.1.0'
   s.add_dependency 'kaminari',                        '0.16.1' # https://github.com/amatsuda/kaminari/issues/642
   s.add_dependency 'bootstrap-kaminari-views',        '~> 0.0.5'
