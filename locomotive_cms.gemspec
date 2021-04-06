@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'locomotivecms_solid',             '~> 0.2.2'
 
   s.add_dependency 'RedCloth',                        '~> 4.2.8'
-  s.add_dependency 'redcarpet',                       '~> 3.2.2'
+  s.add_dependency 'redcarpet',                       '>= 3.2.2', '< 3.6.0'
   s.add_dependency 'sanitize',                        '~> 3.1.0'
   s.add_dependency 'highline',                        '~> 1.6.2'
   s.add_dependency 'stringex',                        '~> 2.5.2'
